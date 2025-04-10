@@ -1,0 +1,13 @@
+<app-weather></app-weather>
+<div>
+  <h2>Weather App</h2>
+  <input [(ngModel)]="city" placeholder="Enter city" />
+  <button (click)="fetchWeather()">Fetch & Save</button>
+
+  <div *ngIf="weather">
+    <h2>{{ weather.city | titlecase }}</h2>
+    <p>Temperature: {{ weather.temperature }} °C</p>
+    <img src="https://openweathermap.org/img/w/{{ weather.icon }}.png" alt="icon">
+    <p>Updated: {{ weather.timestamp | date:'short' }}</p>
+  </div>
+</div>
